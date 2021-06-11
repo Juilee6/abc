@@ -1,0 +1,24 @@
+agent any
+
+  stages {
+
+    stage('Checkout Source') {
+      steps {
+        git 'https://github.com/Juilee6/tempo.git'
+      }
+    }
+
+    
+    }
+
+    stage('Deploy App') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "nginx5.yaml", kubeconfigId: "mykubeconfig")
+        }
+      }
+    }
+
+  }
+
+}
