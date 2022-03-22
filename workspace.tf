@@ -1,5 +1,5 @@
 resource "tfe_workspace" "test" {
   name         = "my-workspace-name"
-  organization = tfe_organization.test.name
+  organization = tfe-cloud-testing
   tag_names    = ["test", "app"]
 }
