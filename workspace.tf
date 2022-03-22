@@ -1,7 +1,7 @@
 provider "tfe" {
   hostname = "app.terraform.io"
-  token    = zJKqTmpt9L4S8w.atlasv1.WOHd0ygS9Undzqk1OEolayaZhwyz2KvwC2Hu9wGhvjQN8ug7IfEphaCVcJkMKCWKXMQ
-  version  = "~> 0.16.1"
+  token    = "lOASyz3vxnk03A.atlasv1.9mpMfPHj3FGSMP321YzKusktK6IIZjQsy5lLt09rP2C2L68H2j04zQdtNZtUQ684ZmA"
+  version  = "~> 0.13"
 }
 
 
