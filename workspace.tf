@@ -6,8 +6,8 @@ provider "tfe" {
 
 
 
-resource "tfe_organization" "test" {
-  name  = "my-org-name"
+resource "tfe_organization" "test-jui" {
+  name  = "my-org-name-jui"
   email = "jkaloti@deqode.com"
 }
 
