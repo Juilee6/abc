@@ -1,5 +1,5 @@
 resource "tfe_organization" "tf-cloud-testing" {
-  name  = "tf-cloud-testing"
+  name  = "tf-cloud-testing1"
   email = "jkaloti@deqode.com"
 }
 
