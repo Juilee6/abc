@@ -17,7 +17,7 @@ terraform {
     }
   }
 
-  required_version = "~> 1.0.2"
+  required_version = "~> 0.14"
 }
 
 resource "tfe_organization" "my_tf_cloud_org" {
