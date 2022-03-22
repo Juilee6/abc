@@ -22,6 +22,6 @@ terraform {
 
 resource "tfe_organization" "my_tf_cloud_org" {
   name  = "my-tf-cloud-org"
-  email = "juilee.kaloti6@gmail.com"
+  email = "jkaloti@deqode.com"
  // collaborator_auth_policy = "two_factor_mandatory"
 }
