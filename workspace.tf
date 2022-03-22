@@ -11,8 +11,8 @@ resource "tfe_organization" "test-jui" {
   email = "jkaloti@deqode.com"
 }
 
-/*resource "tfe_workspace" "test" {
-  name         = "my-workspace-name"
-  organization = tfe_organization.test-organization.name
+resource "tfe_workspace" "test-jk" {
+  name         = "my-workspace-name-jk"
+  organization = tfe_organization.test-jui.name
   tag_names    = ["test", "app"]
-}*/
+}
