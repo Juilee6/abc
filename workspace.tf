@@ -1,8 +1,10 @@
-module "workspace" {
-  source  = "hashicorp-modules/workspace/tfe"
-  version = "0.1.0"
-  email = jkaloti@deqode.com
-  name = tf-cloud-testing
-  token = zJKqTmpt9L4S8w.atlasv1.WOHd0ygS9Undzqk1OEolayaZhwyz2KvwC2Hu9wGhvjQN8ug7IfEphaCVcJkMKCWKXMQ
-  
+resource "tfe_organization" "test-organization" {
+  name  = "my-org-name"
+  email = "jkaloti@deqode.com"
+}
+
+resource "tfe_workspace" "test" {
+  name         = "my-workspace-name"
+  organization = tfe_organization.test-organization.name
+  tag_names    = ["test", "app"]
 }
