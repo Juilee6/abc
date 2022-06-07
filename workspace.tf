@@ -15,4 +15,6 @@ resource "tfe_workspace" "test-jk" {
   name         = "my-workspace-name-jk"
   organization = tfe_organization.test-jui.name
   tag_names    = ["test", "app"]
+  vcs_repo{
+  }
 }
