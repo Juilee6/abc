@@ -17,11 +17,11 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.TF_BETA_USER_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.TF_BETA_USER_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: "us-west-2"
-        run: make test-terraform 
+        run: make test
       - name: Run tests for prod environment
         env:
           ENVIRONMENT: prod
           AWS_ACCESS_KEY_ID: ${{ secrets.TF_PROD_USER_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.TF_PROD_USER_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: "us-west-2"
-        run: make test-terraform
+        run: make test
