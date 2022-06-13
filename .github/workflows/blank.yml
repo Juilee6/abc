@@ -6,8 +6,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BETA_CHARTMUSEUM_PASSWORD: ${{ secrets.BETA_CHARTMUSEUM_PASSWORD }}
-      PROD_CHARTMUSEUM_PASSWORD: ${{ secrets.PROD_CHARTMUSEUM_PASSWORD }}
       SHARED_USER_GITHUB_ACCESS_TOKEN: ${{ secrets.SHARED_USER_GITHUB_ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@v3
