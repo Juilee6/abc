@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run helm tests
-        run: make test-helm
+        run: make test
       - name: Run tests, Run tests for beta environment
         env:
           ENVIRONMENT: beta
