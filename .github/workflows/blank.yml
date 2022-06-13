@@ -1,0 +1,29 @@
+name: Terraform_plan_and_apply
+on: push
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    env:
+      BETA_CHARTMUSEUM_PASSWORD: ${{ secrets.BETA_CHARTMUSEUM_PASSWORD }}
+      PROD_CHARTMUSEUM_PASSWORD: ${{ secrets.PROD_CHARTMUSEUM_PASSWORD }}
+      SHARED_USER_GITHUB_ACCESS_TOKEN: ${{ secrets.SHARED_USER_GITHUB_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run helm tests
+        run: make test-helm
+      - name: Run tests, Run tests for beta environment
+        env:
+          ENVIRONMENT: beta
+          AWS_ACCESS_KEY_ID: ${{ secrets.TF_BETA_USER_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.TF_BETA_USER_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "us-west-2"
+        run: make test-terraform 
+      - name: Run tests for prod environment
+        env:
+          ENVIRONMENT: prod
+          AWS_ACCESS_KEY_ID: ${{ secrets.TF_PROD_USER_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.TF_PROD_USER_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "us-west-2"
+        run: make test-terraform
